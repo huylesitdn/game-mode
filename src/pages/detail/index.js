@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react'
 import {useParams, Link} from 'react-router-dom'
 import {find, get, findIndex} from 'lodash'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import './index.scss'
 import backIcon from 'assets/icons/back.svg'
@@ -12,13 +13,22 @@ import {items} from 'constants'
 function Detail() {
 
   const params = useParams()
+  const [detailId, setDetailId] = useState(params.id)
   const [detail, setDetail] = useState()
   const [correct, setCorrect] = useState()
   const [showResult, setShowResult] = useState(false)
 
   useEffect(() => {
-    setDetail(find(items, ['id', params.id]))
-  }, [params.id])
+    if(detailId !== params.id) { // reset state
+      setDetail()
+      setCorrect()
+      setShowResult(false)
+      setDetailId(params.id)
+    }
+    setDetail(find(items, ['id', params.id]));
+    console.log('detailId', detailId)
+    console.log('params.id', params.id)
+  }, [params, params.id, detailId])
 
   const handleChooseAnswer = answer => e => {
     setShowResult(true)
@@ -47,8 +57,8 @@ function Detail() {
         <div className="row detail-page__container__items">
           {
             _detail.answers.map((answer, key) => (
-              <div className="col-md-6 col-12 detail-page__container__items__item" key={key}>
-                <img className="detail-page__container__items__item__img" src={answer.img} alt="" />
+              <div className="col-lg-6 col-12 detail-page__container__items__item" key={key}>
+                <LazyLoadImage effect="blur" className="detail-page__container__items__item__img" src={answer.img} alt="" />
                 {
                   !showResult && (
                     <div className="detail-page__container__items__item__content">
@@ -70,7 +80,7 @@ function Detail() {
     return (
       <div className="detail-page__container__items__item__result">
         <div className="detail-page__container__items__item__result__content">
-          <img src={isCorrect ? correctIcon : incorrectIcon} alt="" />
+          <LazyLoadImage effect="blur" src={isCorrect ? correctIcon : incorrectIcon} alt="" />
           <div className="text">
             {
               isCorrect ? 

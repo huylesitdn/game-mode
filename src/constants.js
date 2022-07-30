@@ -6,6 +6,11 @@ import img4 from 'assets/images/main/4.png'
 import answerImg21 from 'assets/images/answers/answer-2-1.png'
 import answerImg22 from 'assets/images/answers/answer-2-2.png'
 
+import answerImg41 from 'assets/images/answers/answer-4-1.png'
+import answerImg42 from 'assets/images/answers/answer-4-2.png'
+import answerImg43 from 'assets/images/answers/answer-4-3.png'
+import answerImg44 from 'assets/images/answers/answer-4-4.png'
+
 
 export const items = [
   {
@@ -36,12 +41,20 @@ export const items = [
       title: 'Which one is a Serif font?',
       answers: [
         {
-          img: answerImg21,
+          img: answerImg41,
+          correct: true,
+        },
+        {
+          img: answerImg42,
           correct: false,
         },
         {
-          img: answerImg22,
-          correct: true,
+          img: answerImg43,
+          correct: false,
+        },
+        {
+          img: answerImg44,
+          correct: false,
         },
       ]
     }

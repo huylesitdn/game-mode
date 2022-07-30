@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import './index.scss'
 import startIcon from 'assets/icons/start.svg'
@@ -19,7 +20,7 @@ function Home() {
             items.map((item, key) => (
               <div key={key} className="col-xl-3 col-md-6 col-6 home-page__container__content__item">
                 <div className="home-page__container__content__item__img">
-                  <img src={item.img} alt="" />
+                  <LazyLoadImage effect="blur" src={item.img} alt="" />
                   <div className="home-page__container__content__item__img__hover">
                     <Link to={`/detail/${item.id}`} className="btn btn-light btn-start">Start <img src={startIcon} alt="" /></Link>
                   </div>
