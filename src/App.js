@@ -9,6 +9,7 @@ import Layout from 'components/common/layout';
 
 const Home = React.lazy(() => import("pages/home"));
 const Detail = React.lazy(() => import("pages/detail"));
+const Results = React.lazy(() => import("pages/results"));
 const NotFound = React.lazy(() => import("pages/NotFound"));
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/detail/:id" element={<Detail />} />
+            <Route path="/results" element={<Results />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

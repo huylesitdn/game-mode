@@ -23,6 +23,7 @@ body {
   background-color: #000000;
   color: #fff;
   background-image: url(assets/images/bg.svg);
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -63,4 +64,12 @@ code {
 
 img {
   max-width: 100%;
+}
+
+.btn {
+  transition: all 0.5s;
+
+  &:hover {
+    opacity: 0.8 !important;
+  }
 }
