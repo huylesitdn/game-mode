@@ -1,0 +1,195 @@
+.detail-page {
+  align-items: center;
+  justify-content: center;
+  flex: 1 0 auto;
+  flex-direction: column;
+  display: flex;
+
+  &__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    place-content: space-between;
+
+    &__top {
+      padding: 60px 0 30px;
+
+      @media only screen and (max-width: 575px) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      @media only screen and (max-width: 425px) {
+        padding-top: 30px;
+      }
+
+      &__nav {
+        display: flex;
+        place-content: space-between;
+        place-items: center;
+
+        &__back {}
+
+        .btn {
+          min-width: 179px;
+          height: 52px;
+          border-radius: 40px;
+          display: flex;
+          place-items: center;
+          place-content: center;
+
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          /* identical to box height, or 150% */
+
+          text-align: center;
+          text-transform: uppercase;
+
+          &-light {
+            color: #000000;
+            background: #FFFFFF;
+            border: 1px solid #FFFFFF;
+          }
+
+          &-secondary {
+            color: #FFFFFF;
+            background: #000000;
+            border: 1px solid #FFFFFF;
+          }
+        }
+
+      }
+
+
+      h1 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 46px;
+        line-height: 68px;
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+        margin-bottom: 10px;
+
+        @media only screen and (max-width: 425px) {
+          font-size: 30px;
+          line-height: 40px;
+          margin-top: 15px;
+        }
+      }
+    }
+
+    &__items {
+      margin-left: 0;
+      margin-right: 0;
+
+      &__item {
+        padding: 0;
+        position: relative;
+
+        &__img {
+          width: 100%;
+        }
+
+        &__content {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.7);
+          backdrop-filter: blur(20px);
+          opacity: 0;
+          /* Note: backdrop-filter has minimal browser support */
+
+
+          /* Inside auto layout */
+
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+          z-index: 1;
+          transition: all 0.5s;
+          display: flex;
+          place-content: center;
+          place-items: center;
+
+          .btn-choose {
+            background: #FFFFFF;
+            border-radius: 40px;
+            height: 64px;
+            min-width: 167px;
+            display: flex;
+            place-items: center;
+            place-content: center;
+            gap: 15px;
+
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 36px;
+            /* identical to box height, or 225% */
+
+            text-align: center;
+            text-transform: uppercase;
+
+            color: #000000;
+          }
+        }
+
+        &:hover .detail-page__container__items__item__content {
+          opacity: 1;
+        }
+
+        &__result {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.7);
+          backdrop-filter: blur(20px);
+          /* Note: backdrop-filter has minimal browser support */
+
+
+          /* Inside auto layout */
+
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+          z-index: 1;
+          transition: all 0.5s;
+          display: flex;
+          place-content: center;
+          place-items: center;
+          flex-direction: column;
+
+          &__content {
+            background: transparent;
+            text-align: center;
+            max-width: 70%;
+
+            img {
+              // max-width: 100%;
+            }
+
+            .text {
+              font-style: normal;
+              font-weight: 300;
+              font-size: 20px;
+              line-height: 30px;
+              text-align: center;
+
+              color: #FFFFFF;
+
+              opacity: 0.8;
+              margin-top: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

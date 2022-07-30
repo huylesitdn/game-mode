@@ -1,9 +1,10 @@
-@import "~bootstrap/scss/bootstrap";
+@import "assets/scss/index.scss";
 
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -37,6 +38,8 @@ code {
   flex: 1 1;
   flex-direction: column;
   display: flex;
+  max-width: 1440px;
+  margin: auto;
 }
 
 @media only screen and (max-width: 767px) {
@@ -44,4 +47,20 @@ code {
     margin-left: 0;
     margin-right: 0;
   }
+}
+
+@media (min-width: 1400px) {
+
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1232px;
+  }
+}
+
+img {
+  max-width: 100%;
 }

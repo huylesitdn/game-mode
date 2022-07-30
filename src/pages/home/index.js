@@ -1,38 +1,8 @@
 import {Link} from 'react-router-dom'
 
 import './index.scss'
-import img1 from 'assets/images/main/1.png'
-import img2 from 'assets/images/main/2.png'
-import img3 from 'assets/images/main/3.png'
-import img4 from 'assets/images/main/4.png'
 import startIcon from 'assets/icons/start.svg'
-
-const items = [
-  {
-    id: '1',
-    name: 'Visual',
-    img: img1,
-    col: 2,
-  },
-  {
-    id: '2',
-    name: 'Intuitive',
-    img: img2,
-    col: 2,
-  },
-  {
-    id: '3',
-    name: 'Similiarity',
-    img: img3,
-    col: 2,
-  },
-  {
-    id: '4',
-    name: 'Cognitive',
-    img: img4,
-    col: 2,
-  },
-]
+import {items} from 'constants'
 
 
 function Home() {
@@ -51,7 +21,7 @@ function Home() {
                 <div className="home-page__container__content__item__img">
                   <img src={item.img} alt="" />
                   <div className="home-page__container__content__item__img__hover">
-                    <Link to={'/'} className="btn btn-light btn-start">Start <img src={startIcon} alt="" /></Link>
+                    <Link to={`/detail/${item.id}`} className="btn btn-light btn-start">Start <img src={startIcon} alt="" /></Link>
                   </div>
                 </div>
                 <div className="home-page__container__content__item__text">{item.name}</div>
