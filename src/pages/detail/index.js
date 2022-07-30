@@ -14,20 +14,28 @@ function Detail() {
 
   const params = useParams()
   const [detailId, setDetailId] = useState(params.id)
+  const [loading, setLoading] = useState(true)
   const [detail, setDetail] = useState()
   const [correct, setCorrect] = useState()
   const [showResult, setShowResult] = useState(false)
 
   useEffect(() => {
     if(detailId !== params.id) { // reset state
-      setDetail()
       setCorrect()
       setShowResult(false)
       setDetailId(params.id)
+      setLoading(true)
+      setDetail();
     }
+
     setDetail(find(items, ['id', params.id]));
-    console.log('detailId', detailId)
-    console.log('params.id', params.id)
+    let timer1 = setTimeout(() => {
+      setLoading(false)
+    }, 500);
+
+    return () => {
+      clearTimeout(timer1);
+    };
   }, [params, params.id, detailId])
 
   const handleChooseAnswer = answer => e => {
@@ -39,6 +47,10 @@ function Detail() {
     const _detail = get(detail, 'detail')
     const currentIndex = findIndex(items, ['id', params.id]);
     const nextIndex = (currentIndex + 1) % items.length;
+
+    if(!!loading) {
+      return 'Loading...'
+    }
 
     return (
       <div className="detail-page__container">
