@@ -21,7 +21,7 @@ function Home() {
               <div key={key} className="col-xl-3 col-md-6 col-6 home-page__container__content__item">
                 <div className="home-page__container__content__item__img">
                   <LazyLoadImage effect="blur" src={item.img} alt="" />
-                  <div className="home-page__container__content__item__img__hover">
+                  <div className="home-page__container__content__item__img__hover hover-bg">
                     <Link to={`/detail/${item.id}`} className="btn btn-light btn-start">Start <img src={startIcon} alt="" /></Link>
                   </div>
                 </div>

@@ -95,13 +95,13 @@
         }
 
         &__content {
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          background: rgba(0, 0, 0, 0.7);
-          backdrop-filter: blur(20px);
+          // position: absolute;
+          // left: 0;
+          // right: 0;
+          // top: 0;
+          // bottom: 0;
+          // background: rgba(0, 0, 0, 0.1);
+          // backdrop-filter: blur(20px);
           opacity: 0;
           /* Note: backdrop-filter has minimal browser support */
 
@@ -145,13 +145,13 @@
         }
 
         &__result {
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          background: rgba(0, 0, 0, 0.7);
-          backdrop-filter: blur(20px);
+          // position: absolute;
+          // left: 0;
+          // right: 0;
+          // top: 0;
+          // bottom: 0;
+          // background: rgba(0, 0, 0, 0.7);
+          // backdrop-filter: blur(20px);
           /* Note: backdrop-filter has minimal browser support */
 
 

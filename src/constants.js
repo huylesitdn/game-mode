@@ -22,10 +22,12 @@ export const items = [
       title: 'Which one is a Serif font?',
       answers: [
         {
+          id: 1,
           img: answerImg21,
           correct: false,
         },
         {
+          id: 2,
           img: answerImg22,
           correct: true,
         },
@@ -41,18 +43,22 @@ export const items = [
       title: 'Which one is a Serif font?',
       answers: [
         {
+          id: 1,
           img: answerImg41,
           correct: true,
         },
         {
+          id: 2,
           img: answerImg42,
           correct: false,
         },
         {
+          id: 3,
           img: answerImg43,
           correct: false,
         },
         {
+          id: 4,
           img: answerImg44,
           correct: false,
         },
@@ -68,10 +74,12 @@ export const items = [
       title: 'Which one is a Serif font?',
       answers: [
         {
+          id: 1,
           img: answerImg21,
           correct: false,
         },
         {
+          id: 2,
           img: answerImg22,
           correct: true,
         },
@@ -87,10 +95,12 @@ export const items = [
       title: 'Which one is a Serif font?',
       answers: [
         {
+          id: 1,
           img: answerImg21,
           correct: false,
         },
         {
+          id: 2,
           img: answerImg22,
           correct: true,
         },

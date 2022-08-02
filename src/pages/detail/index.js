@@ -39,7 +39,8 @@ function Detail() {
   }, [params, params.id, detailId])
 
   const handleChooseAnswer = answer => e => {
-    setShowResult(true)
+    console.log(answer)
+    setShowResult(answer.id)
     setCorrect(answer.correct)
   }
 
@@ -73,12 +74,12 @@ function Detail() {
                 <LazyLoadImage effect="blur" className="detail-page__container__items__item__img" src={answer.img} alt="" />
                 {
                   !showResult && (
-                    <div className="detail-page__container__items__item__content">
+                    <div className="detail-page__container__items__item__content hover-bg">
                       <button className="btn btn-light btn-choose" onClick={handleChooseAnswer(answer)}>Choose Answer</button>
                     </div>
                   )
                 }
-                {!!showResult && renderResultContent(answer)}
+                {showResult === answer.id && renderResultContent(answer)}
               </div>
             ))
           }
@@ -90,7 +91,7 @@ function Detail() {
   const renderResultContent = answer => {
     const isCorrect = answer.correct
     return (
-      <div className="detail-page__container__items__item__result">
+      <div className="detail-page__container__items__item__result hover-bg">
         <div className="detail-page__container__items__item__result__content">
           <LazyLoadImage effect="blur" src={isCorrect ? correctIcon : incorrectIcon} alt="" />
           <div className="text">
